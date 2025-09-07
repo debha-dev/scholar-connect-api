@@ -31,6 +31,18 @@ export const User = mysqlDB.define('User', {
     type: DataTypes.ENUM("student", "admin", "recruiter"),
     defaultValue: "student",
   },
+  isVerified: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  },
+  profilePicture: {
+    type: DataTypes.STRING,
+    allowNull: true, // URL or path to file
+  },
+  bio: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
   createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
